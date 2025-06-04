@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="STrain.CQS" Version="3.1.0-rc.1" />
+    <PackageReference Include="STrain.Eventing" Version="3.1.0-rc.1" />
+  </ItemGroup>
+
+</Project>
