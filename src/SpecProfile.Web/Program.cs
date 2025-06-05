@@ -1,5 +1,6 @@
 using Serilog;
 using SpecProfile.Web.Wireups;
+using STrain.CQS.NetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,8 +11,9 @@ builder.Host.UseSerilog((context, configuration) => configuration.ReadFrom.Confi
 
 builder.Services.AddControllers();
 
-builder.UseCQS();
-builder.UseEventing();
+builder.AddDependencies();
+builder.AddCQS();
+builder.AddEventing();
 
 var app = builder.Build();
 
@@ -20,5 +22,8 @@ var app = builder.Build();
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapGenericRequestController();
 
 app.Run();
+
+public partial class Program { }

@@ -1,28 +1,38 @@
-﻿using SpecProfile.Api;
+﻿using SpecProfile.Events;
 using STrain.Eventing.Api;
 
 namespace SpecProfile.Domain
 {
-	public class UserAggregateRoot
-	{
-		private readonly UserState _state = new();
+    public interface IAggregateRoot<T>
+    {
+        T State { get; }
+        IEnumerable<IEvent> UncommitedEvents { get; }
+    }
 
-		private readonly List<IEvent> _events = [];
-		public IEnumerable<IEvent> UncommitedEvents => _events;
+    public class UserAggregateRoot : IAggregateRoot<UserState>
+    {
+        private readonly UserState _state = new();
 
-		public void LogIn(string username)
-		{
-			_events.Add(new LoggedInEvent() { Username = username });
-		}
+        private readonly List<IEvent> _events = [];
+        IEnumerable<IEvent> IAggregateRoot<UserState>.UncommitedEvents => _events;
 
-		public void Apply(LoggedInEvent loggedInEvent)
-		{
-			_state.UserName = loggedInEvent.Username;
-		}
-	}
+        UserState IAggregateRoot<UserState>.State => _state;
 
-	public record UserState
-	{
-		public string UserName { get; set; } = null!;
-	}
+        public void LogIn(string username)
+        {
+            var @event = new LoggedInEvent { Username = username };
+            _events.Add(@event);
+            Apply(@event);
+        }
+
+        public void Apply(LoggedInEvent loggedInEvent)
+        {
+            _state.UserName = loggedInEvent.Username;
+        }
+    }
+
+    public record UserState
+    {
+        public string UserName { get; set; } = null!;
+    }
 }
