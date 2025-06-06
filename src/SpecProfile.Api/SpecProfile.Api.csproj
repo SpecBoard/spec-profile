@@ -4,9 +4,11 @@
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <RootNamespace>SpecProfile</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.11.0" />
     <PackageReference Include="STrain.CQS.Api" Version="3.1.0-rc.1" />
     <PackageReference Include="STrain.Eventing.Api" Version="3.1.0-rc.1" />
   </ItemGroup>

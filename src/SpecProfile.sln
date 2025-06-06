@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecProfile.Test.Unit", "Sp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecProfile.Web", "SpecProfile.Web\SpecProfile.Web.csproj", "{58A1B283-2168-4796-AFD3-56AE37C049E3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecProfile.Test.Integration", "SpecProfile.Test.Integration\SpecProfile.Test.Integration.csproj", "{F1D2FF53-CAEF-4A3E-BF6C-2BDA32C9EF31}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{58A1B283-2168-4796-AFD3-56AE37C049E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58A1B283-2168-4796-AFD3-56AE37C049E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58A1B283-2168-4796-AFD3-56AE37C049E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1D2FF53-CAEF-4A3E-BF6C-2BDA32C9EF31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1D2FF53-CAEF-4A3E-BF6C-2BDA32C9EF31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1D2FF53-CAEF-4A3E-BF6C-2BDA32C9EF31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1D2FF53-CAEF-4A3E-BF6C-2BDA32C9EF31}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

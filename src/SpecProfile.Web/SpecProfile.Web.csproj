@@ -20,4 +20,9 @@
     <PackageReference Include="STrain.Eventing.KurrentDB.NetCore" Version="3.1.0-rc.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SpecProfile.Api\SpecProfile.Api.csproj" />
+    <ProjectReference Include="..\SpecProfile.Application\SpecProfile.Application.csproj" />
+  </ItemGroup>
+
 </Project>

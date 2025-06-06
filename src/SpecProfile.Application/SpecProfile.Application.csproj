@@ -7,8 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="KurrentDB.Client" Version="1.0.0" />
     <PackageReference Include="STrain.CQS" Version="3.1.0-rc.1" />
     <PackageReference Include="STrain.Eventing" Version="3.1.0-rc.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SpecProfile.Domain\SpecProfile.Domain.csproj" />
   </ItemGroup>
 
 </Project>
