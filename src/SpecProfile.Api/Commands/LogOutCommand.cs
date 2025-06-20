@@ -3,7 +3,7 @@ using STrain;
 
 namespace SpecProfile.Commands
 {
-	public record LogInCommand : Command
+	public record LogOutCommand : Command
 	{
 		public required string User { get; init; }
 	}
@@ -11,12 +11,11 @@ namespace SpecProfile.Commands
 
 namespace SpecProfile.Commands.Validators
 {
-	public class LogInCommandValidator : AbstractValidator<LogInCommand>
+	public class LogOutCommandValidator : AbstractValidator<LogOutCommand>
 	{
-		public LogInCommandValidator()
+		public LogOutCommandValidator()
 		{
-			RuleFor(c => c.User)
-				.NotEmpty();
+			RuleFor(c => c.User).NotEmpty();
 		}
 	}
 }

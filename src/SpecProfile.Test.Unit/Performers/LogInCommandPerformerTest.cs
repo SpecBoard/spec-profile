@@ -69,8 +69,8 @@ namespace SpecProfile.Test.Unit.CommandHandlers
 		public static bool Validate(this UserAggregateRoot aggregateRoot, LogInCommand command)
 		{
 			var state = (IAggregateRoot<UserState>)aggregateRoot;
-			return state.UncommitedEvents.First() is UserCreatedEvent userCreatedEvent && userCreatedEvent.UserName.Equals(command.UserName)
-				&& state.UncommitedEvents.ElementAt(1) is LoggedInEvent loggedInEvent && loggedInEvent.UserName.Equals(command.UserName);
+			return state.UncommitedEvents.First() is UserCreatedEvent userCreatedEvent && userCreatedEvent.User.Equals(command.User)
+				&& state.UncommitedEvents.ElementAt(1) is LoggedInEvent loggedInEvent && loggedInEvent.User.Equals(command.User);
 		}
 	}
 }

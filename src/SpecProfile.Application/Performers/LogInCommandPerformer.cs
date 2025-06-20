@@ -19,11 +19,11 @@ namespace SpecProfile.Application.Performers
 
 		public async Task PerformAsync(LogInCommand command, CancellationToken cancellationToken)
 		{
-			var user = await _repository.GetAsync(command.UserName, cancellationToken);
+			var user = await _repository.GetAsync(command.User, cancellationToken);
 			if (user is null)
 			{
 				user = new UserAggregateRoot();
-				user.Create(command.UserName);
+				user.Create(command.User);
 				_logger.LogInformation("User has been created");
 			}
 			user.LogIn();

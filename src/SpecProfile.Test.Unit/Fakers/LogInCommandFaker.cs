@@ -7,7 +7,7 @@ namespace SpecProfile.Test.Unit.Fakers
 	{
 		public LogInCommandFaker UserName(string? userName)
 		{
-			RuleFor(c => c.UserName, userName);
+			RuleFor(c => c.User, userName);
 
 			return this;
 		}

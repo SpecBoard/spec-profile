@@ -2,7 +2,7 @@
 
 namespace SpecProfile.Events
 {
-	public record UserCreatedEvent : Event
+	public record LoggedOutEvent : Event
 	{
 		public required string User { get; init; }
 	}

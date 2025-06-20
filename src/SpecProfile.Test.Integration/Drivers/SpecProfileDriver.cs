@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using SpecProfile.Commands;
 using SpecProfile.Test.Integration.Helpers;
+using STrain;
 using System.Net.Http.Json;
 
 namespace SpecProfile.Test.Integration.Drivers
@@ -39,8 +40,17 @@ namespace SpecProfile.Test.Integration.Drivers
 
 		public async Task LoginAsync()
 		{
+			await SendAsync(new LogInCommand { User = User });
+		}
+
+		public async Task LogOutAsync()
+		{
+			await SendAsync(new LogOutCommand { User = User });
+		}
+
+		private async Task SendAsync<TCommand>(TCommand command) where TCommand : Command
+		{
 			var client = _host.CreateClient();
-			var command = new LogInCommand { UserName = User };
 
 			var context = _host.RunContext(Context);
 

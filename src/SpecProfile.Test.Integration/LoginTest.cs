@@ -3,11 +3,11 @@ using Xunit.Abstractions;
 
 namespace SpecProfile.Test.Integration
 {
-	public class LoginTests
+	public class LoginTest
 	{
 		private readonly SpecProfileDriver _driver = new();
 
-		public LoginTests(ITestOutputHelper output)
+		public LoginTest(ITestOutputHelper output)
 		{
 			output.WriteLine("Starting test context: {0}", _driver.Context.RunId.ToString());
 		}

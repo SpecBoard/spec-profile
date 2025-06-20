@@ -9,7 +9,7 @@ namespace SpecProfile.Application.Repositories
 {
 	public interface IUserRepository
 	{
-		Task<UserAggregateRoot?> GetAsync(string username, CancellationToken cancellationToken);
+		Task<UserAggregateRoot?> GetAsync(string user, CancellationToken cancellationToken);
 		Task SaveAsync(IAggregateRoot<UserState> aggregateRoot, CancellationToken cancellationToken);
 	}
 
@@ -26,11 +26,11 @@ namespace SpecProfile.Application.Repositories
 			_logger = logger;
 		}
 
-		public async Task<UserAggregateRoot?> GetAsync(string username, CancellationToken cancellationToken)
+		public async Task<UserAggregateRoot?> GetAsync(string user, CancellationToken cancellationToken)
 		{
 			_logger.LogDebug("Creating state");
 
-			var streamResult = _client.ReadStreamAsync(Direction.Forwards, $"{_category}-{username}", StreamPosition.Start, cancellationToken: cancellationToken);
+			var streamResult = _client.ReadStreamAsync(Direction.Forwards, $"{_category}-{user}", StreamPosition.Start, cancellationToken: cancellationToken);
 
 			if (await streamResult.ReadState == ReadState.StreamNotFound) return null;
 

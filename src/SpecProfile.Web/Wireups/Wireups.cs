@@ -27,6 +27,7 @@ namespace SpecProfile.Web.Wireups
 					.UseFluentRequestValidator(builder => builder.RegistrateFrom<LogInCommandValidator>());
 
 				builder.AddPerformer<ICommandPerformer<LogInCommand>, LogInCommandPerformer>();
+				builder.AddPerformer<ICommandPerformer<LogOutCommand>, LogOutCommandPerformer>();
 			});
 		}
 
